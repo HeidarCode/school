@@ -1,0 +1,454 @@
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap");
+
+/* 🎨 پالت رنگی پروژه */
+:root {
+  --color-primary: #3b1f2b;
+  --color-accent: #db162f;
+  --color-light: #dbdfac;
+  --color-blue: #5f758e;
+  --color-dark: #383961;
+}
+
+/* 🧱 پایه کلی سند */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: "Vazirmatn", sans-serif;
+
+  /* ✅ Scrollbar سمت چپ */
+  direction: ltr;
+
+  color: var(--color-light);
+  /* background-color: var(--color-primary); */
+}
+
+/* 🔷 صفحه اصلی */
+.homepage {
+  direction: rtl; /* ✅ محتوای فارسی */
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding-top: 110px; /* فاصله از هدر ثابت */
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* 🖼 اسلایدر */
+.slider {
+  width: 100%; /* ✅ کل عرض صفحه */
+  margin: 0 0 5rem 0;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 0; /* تمام‌عرض */
+  backdrop-filter: blur(15px);
+  text-align: center;
+  position: relative;
+  padding: 2rem 0;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.slider-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.slider-inner img {
+  width: calc(25% - 1rem);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
+}
+
+.slider-inner img:hover {
+  transform: scale(1.05);
+}
+
+/* نقاط وضعیت زیر اسلایدر */
+.dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px;
+  transition: all 0.3s;
+}
+
+.dot.active {
+  background-color: var(--color-accent);
+}
+
+/* 🌟 بخش کارت‌ها */
+.main-sections,
+.fun-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 2rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card {
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  opacity: 0.9;
+}
+
+/* رنگ‌ کارت‌ها */
+.red {
+  background: var(--color-accent);
+}
+.yellow {
+  background: var(--color-light);
+  color: var(--color-dark);
+}
+.blue {
+  background: var(--color-blue);
+}
+.purple {
+  background: var(--color-dark);
+}
+
+/* 🎯 بخش سرگرمی */
+.fun-section {
+  text-align: center;
+}
+
+.fun-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2rem;
+  border-radius: 15px;
+  min-width: 120px;
+  color: #db162f;
+  transition: all 0.3s;
+}
+
+.fun-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+/* 🦶 فوتر */
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 📱 واکنش‌گرا برای موبایل */
+@media (max-width: 768px) {
+  .slider-inner img {
+    width: calc(50% - 0.5rem);
+  }
+}
+/* 🎮 سکشن سرگرمی‌های آنلاین */
+.fun-section.fun-redesign {
+  direction: rtl;
+  position: relative;
+  width: 100%;
+  padding: 64px 20px;
+  box-sizing: border-box;
+  background: #dbdfac; /* ✅ رنگ پس‌زمینه اصلی */
+  overflow: hidden;
+}
+
+/* تیتر و زیرتیتر */
+.fun-header {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto 28px;
+  color: var(--color-dark);
+}
+.fun-header h2 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: -0.3px;
+}
+.fun-sub {
+  margin: 10px 0 0;
+  font-size: 0.95rem;
+  color: #2d2e4a;
+  opacity: 0.9;
+}
+.fun-underline {
+  display: inline-block;
+  width: 120px;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #db162f, #5f758e);
+  margin-top: 14px;
+}
+
+/* شبکه‌ی کارت‌ها */
+.fun-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 18px;
+  max-width: 1200px;
+  margin: 24px auto 0;
+  padding: 0 8px;
+}
+
+@media (max-width: 1024px) {
+  .fun-grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .fun-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* کارت اصلی */
+.activity-card {
+  position: relative;
+  border-radius: 18px;
+  padding: 18px 16px 16px;
+  backdrop-filter: blur(12px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.45), rgba(255,255,255,0.25));
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.5);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(56,57,97,0.15);
+  overflow: hidden;
+}
+.activity-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 18px 44px rgba(0,0,0,0.16),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* افکت نور هنگام هاور */
+.card-glow {
+  content: "";
+  position: absolute;
+  inset: -40% -30% auto auto;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(closest-side, rgba(219,22,47,0.25), rgba(95,117,142,0.0));
+  filter: blur(18px);
+  transform: translate(30px, -30px);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.activity-card:hover .card-glow {
+  opacity: 1;
+}
+
+/* سر کارت */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.activity-icon {
+  font-size: 30px;
+  line-height: 1;
+  transform: translateY(2px);
+}
+.badge {
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(219, 22, 47, 0.12);
+  color: var(--color-dark);
+  border: 1px solid rgba(219, 22, 47, 0.4);
+  backdrop-filter: blur(6px);
+}
+
+/* عنوان و توضیح کارت */
+.activity-title {
+  margin: 12px 0 6px;
+  font-size: 1.05rem;
+  color: var(--color-dark);
+  font-weight: 700;
+}
+.activity-desc {
+  margin: 0 0 14px;
+  font-size: 0.9rem;
+  color: #2d2e4a;
+  opacity: 0.85;
+}
+
+/* دکمه بازی */
+.play-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(56,57,97,0.2);
+  background: linear-gradient(90deg, rgba(219,22,47,0.85), rgba(95,117,142,0.85));
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 8px 18px rgba(219,22,47,0.25);
+}
+.play-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(219,22,47,0.35);
+  filter: saturate(1.15);
+}
+
+/* دکورهای نوری پس‌زمینه */
+.fun-decor {
+  position: absolute;
+  z-index: 0;
+  filter: blur(24px);
+  opacity: 0.25;
+  pointer-events: none;
+}
+.fun-decor.d1 {
+  width: 220px; height: 220px;
+  right: -60px; top: -40px;
+  background: radial-gradient(closest-side, rgba(219,22,47,0.35), rgba(59,31,43,0.0));
+}
+.fun-decor.d2 {
+  width: 280px; height: 280px;
+  left: -80px; bottom: -60px;
+  background: radial-gradient(closest-side, rgba(95,117,142,0.35), rgba(219,223,172,0.0));
+}
+.fun-decor.d3 {
+  width: 180px; height: 180px;
+  right: 18%; bottom: 8%;
+  background: radial-gradient(closest-side, rgba(56,57,97,0.35), rgba(219,223,172,0.0));
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background-color: #383961; /* رنگ اصلی پروژه */
+  color: #fff;
+  padding: 50px 20px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  text-align: right;
+  direction: rtl;
+}
+
+.footer-box h3,
+.footer-box h4 {
+  margin-bottom: 10px;
+  color: #dbdfac;
+}
+.footer-box p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.footer-box input {
+  width: 100%;
+  max-width: 220px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 8px;
+}
+
+.footer-box button {
+  display: inline-block;
+  background: linear-gradient(90deg, #db162f, #5f758e);
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.footer-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- Social Icons ---------- */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+.social-links a {
+  font-size: 22px;
+  color: #dbdfac;
+  transition: all 0.3s ease;
+}
+.social-links a:hover {
+  color: #db162f;
+  transform: translateY(-3px);
+}
+
+/* ---------- Copy text ---------- */
+.copy {
+  font-size: 0.8rem;
+  color: #dbdfac;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* ---------- ریسپانسیو ---------- */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-box input {
+    max-width: 100%;
+  }
+}

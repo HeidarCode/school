@@ -1,0 +1,272 @@
+/* =========================
+   🧭 DASHBOARD CONTAINER
+========================= */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  /* background: linear-gradient(135deg, #dbdfac 0%, #5f758e 100%); */
+  direction: rtl;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+/* =========================
+   📋 PROFILE CARD (مین وسط صفحه)
+========================= */
+.profile-card {
+  flex: 1;
+  padding: 60px 40px;
+  text-align: center;
+  position: relative;
+  background: transparent;
+}
+
+/* =========================
+   🎯 TITLE (عنوان اصلی)
+========================= */
+.card-title {
+  color: #383961;
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 35px;
+  text-shadow: 0 2px 8px rgba(56, 57, 97, 0.25);
+}
+
+/* =========================
+   🖼️ PROFILE PHOTO
+========================= */
+.profile-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.photo-circle {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #dbdfac;
+  box-shadow: 0 0 18px rgba(219, 223, 172, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.photo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-placeholder {
+  font-size: 3.4rem;
+  color: #db162f;
+  line-height: 1;
+}
+
+/* دکمه انتخاب عکس */
+.photo-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 24px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background: linear-gradient(90deg, #db162f, #3b1f2b);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.photo-btn:hover {
+  box-shadow: 0 6px 15px rgba(219, 22, 47, 0.4);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   📑 FORM بخش ورودی‌ها
+========================= */
+.profile-form {
+  display: flex;
+   display: flex;
+  flex-direction: column;
+  align-items: center;          /* مرکز چین افقی */
+  justify-content: flex-start;
+  padding: 60px 0;
+  background: transparent;
+  width: 520px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.form-row label {
+  font-weight: 600;
+  color: #3b1f2b;
+  margin-bottom: 6px;
+}
+
+.form-row input,
+.form-row select {
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  font-family: inherit;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-row input:focus,
+.form-row select:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(56, 57, 97, 0.35);
+}
+
+/* =========================
+   💾 دکمه ذخیره
+========================= */
+.save-btn {
+  background: linear-gradient(90deg, #383961, #5f758e);
+  color: #fff;
+  border: none;
+  padding: 12px 0;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+}
+
+.save-btn:hover {
+  background: linear-gradient(90deg, #3b1f2b, #db162f);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(56, 57, 97, 0.4);
+}
+
+/* =========================
+   🎓 کارت نمایه نهایی (Glassmorphism)
+========================= */
+.student-profile-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  border-radius: 28px;
+  padding: 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 460px;
+  margin: 80px auto;
+  color: #383961;
+  transition: all 0.4s;
+}
+
+.student-profile-card:hover {
+  transform: translateY(-5px);
+}
+
+/* آواتار دانش‌آموز */
+.student-profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  border: 3px solid #dbdfac;
+  box-shadow: 0 0 18px rgba(219, 223, 172, 0.55);
+}
+
+.student-profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* اطلاعات در کارت پروفایل */
+.student-profile-info {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 18px;
+  line-height: 1.9;
+  text-align: right;
+  color: #3b1f2b;
+  font-weight: 500;
+}
+
+.student-profile-info p {
+  margin: 6px 0;
+}
+
+/* =========================
+   🗑️ دکمه حذف نمایه
+========================= */
+.delete-profile-btn {
+  margin-top: 25px;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 14px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(90deg, #db162f, #3b1f2b);
+  transition: all 0.25s ease;
+}
+.delete-profile-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(219, 22, 47, 0.45);
+}
+
+/* =========================
+   📱 واکنش‌گرایی
+========================= */
+@media (max-width: 900px) {
+  .profile-card {
+    padding: 40px 20px;
+  }
+
+  .student-profile-card {
+    margin: 40px auto;
+    padding: 30px 20px;
+  }
+
+  .form-row input,
+  .form-row select {
+    font-size: 0.9rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+}
+/* پدر اصلی محتوا (dashboard-content) */
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* 👈 این باعث وسط‌چین شدن افقی همه‌ی محتوا میشه */
+  justify-content: flex-start;
+  width: 100%;
+  padding: 2rem 0;
+  box-sizing: border-box;
+}
+
+/* کارت پروفایل دانش‌آموز */
+.student-profile-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 400px;        /* 👈 عرض ثابت مناسب */
+  margin: 2rem auto;   /* 👈 برای اطمینان از وسط‌چینی افقی */
+  text-align: center;  /* 👈 تراز متن وسط */
+}
+
+/* اگر کارت داخل profile-card قرار گرفته */
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* 👈 این هم برای سازگاری */
+}

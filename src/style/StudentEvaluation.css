@@ -1,0 +1,208 @@
+html, body, #root {
+  min-height: 100%;
+  height: auto !important;
+  overflow-y: visible !important;
+  overflow-x: hidden;
+}
+
+
+
+
+.evaluation-section {
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  font-family: "Vazirmatn", sans-serif;
+  color: #383961;
+  direction: rtl;
+}
+
+.section-title {
+  background-color: #DBDFAC;
+  color: #3B1F2B;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.evaluation-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.evaluation-table th {
+  background-color: #5F758E;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.evaluation-table td {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.evaluation-table input {
+  width: 80px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.evaluation-table input:focus {
+  outline: none;
+  box-shadow: 0 0 4px #dbdfac;
+}
+.evaluation-section {
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  font-family: "Vazirmatn", sans-serif;
+  color: #383961;
+}
+
+.section-title {
+  background-color: #DBDFAC;
+  color: #3B1F2B;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.evaluation-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.evaluation-table th {
+  background-color: #5F758E;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.evaluation-table td {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.evaluation-table input {
+  width: 80px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.evaluation-table input:focus {
+  outline: none;
+  box-shadow: 0 0 4px #dbdfac;
+}
+/* کوچک‌تر کردن متن بازخورد */
+.evaluation-table td {
+  font-size: 1rem; /* اندازه متن معمولی ستون‌ها */
+}
+
+.evaluation-table td:nth-child(3) {
+  font-size: 0.8rem; /* ستون سوم مخصوص بازخورد */
+  line-height: 1.6;
+}
+/* ستون سوم جدول – محدودیت ارتفاع و رفتار سرریز متن */
+.evaluation-table td:nth-child(3) {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  height: 120px;              /* ارتفاع ثابت سلول */
+  max-width: 500px;           /* حداکثر عرض ستون */
+  overflow-y: auto;           /* اگر متن زیاد شد، اسکرول عمودی فعال شود */
+  overflow-x: hidden;         /* افقی رد نشود */
+  text-align: justify;        /* تراز متن برای زیبایی */
+}
+/* -------- عنوان فرعی بالای جدول -------- */
+.evaluation-subtitle {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #dbdfac; /* رنگ مکمل پالت مدرسه */
+  background:#383961;/* شیشه‌ای */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 12px 24px;
+  margin: 40px auto 20px;
+  width: fit-content;
+  box-shadow: 0 0 12px rgba(219, 162, 47, 0.25);
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.evaluation-subtitle:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 16px rgba(219, 162, 47, 0.45);
+  color: #fff;
+}
+
+/* 🟣 بنر اطلاعات دانش‌آموز */
+.student-info-banner {
+  background: rgba(56, 57, 97, 0.85); /* رنگ ایندیگو تیره و نیمه‌شفاف */
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  color: var(--cream);
+  font-family: "Vazirmatn", sans-serif;
+  border-radius: 16px;
+  padding: 25px 35px;
+  margin: 40px 0 50px;
+  box-shadow: 0 8px 30px rgba(56, 57, 97, 0.25);
+  transition: all 0.3s ease;
+  direction: rtl;
+  text-align: right;
+}
+
+.student-info-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 35px rgba(56, 57, 97, 0.35);
+}
+
+/* محتوا */
+.student-info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.student-info-banner h3 {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 10px;
+  border-bottom: 2px solid rgba(219, 223, 172, 0.5);
+  padding-bottom: 6px;
+}
+
+.student-details-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  font-size: 1rem;
+}
+
+.student-details-row p {
+  margin: 0;
+}
