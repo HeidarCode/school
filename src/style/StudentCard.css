@@ -1,0 +1,89 @@
+.student-card {
+  width: 350px;
+  background: #777;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center;
+  direction: rtl;
+  font-family: Vazirmatn, sans-serif;
+}
+
+.student-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.student-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  color: #777;
+}
+
+.student-card-body {
+  font-size: 15px;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.student-card-body p {
+  margin: 6px 0;
+}
+
+.student-card-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  width: 60px;
+  height: auto;
+}
+/* StudentCard.css */
+.student-card-wrapper {
+  text-align: center;
+}
+
+.student-card {
+  width: 350px;
+  padding: 15px;
+  background: #777;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card-text p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.download-btn {
+  margin-top: 10px;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.download-btn:hover {
+  background: #0056b3;
+}

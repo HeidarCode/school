@@ -1,15 +1,20 @@
-// File: src/components/student/StudentDashboard.jsx
 import "../../style/StudentDashboard.css";
 import Sidebar from "./Sidebar";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import StudentHealthInfo from "./StudentHealthInfo";
+import StudentCard from "./StudentCard";
+import ScoreChart from "./ScoreChart";
+
+
 
 function StudentDashboard() {
   const [profileImg, setProfileImg] = useState(null);
   const [isProfileComplete, setIsProfileComplete] = useState(false);
   const [studentData, setStudentData] = useState({});
   const [activeSection, setActiveSection] = useState("profile");
+  const [showCard, setShowCard] = useState(false);
+
   const navigate = useNavigate();
 
   const [profileData, setProfileData] = useState({
@@ -33,11 +38,16 @@ function StudentDashboard() {
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
-    if (file) setProfileImg(URL.createObjectURL(file));
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onloadend = () => setProfileImg(reader.result);
+    reader.readAsDataURL(file);
   };
 
   const handleSave = (e) => {
     e.preventDefault();
+
     if (profileData.fatherName && profileData.sport && profileData.grade && profileImg) {
       const completedProfile = {
         fatherName: profileData.fatherName,
@@ -47,8 +57,10 @@ function StudentDashboard() {
         firstName: profileData.firstName,
         lastName: profileData.lastName,
       };
+
       setStudentData(completedProfile);
       localStorage.setItem("studentData", JSON.stringify(completedProfile));
+
       alert("پروفایل با موفقیت ثبت شد!");
       window.location.reload();
     } else {
@@ -76,19 +88,19 @@ function StudentDashboard() {
 
   return (
     <div className="dashboard-container">
-      {/* سایدبار دانش‌آموز با ناوبری */}
+
       <Sidebar
         role="student"
         isProfileComplete={isProfileComplete}
-        onNavigate={(section) => setActiveSection(section)} // کنترل تب فعال
+        onNavigate={(section) => setActiveSection(section)}
       />
 
-      {/* محتوای صفحه بر اساس بخش فعال */}
       <div className="dashboard-content">
 
-        {/* 🟩 بخش پروفایل دانش‌آموز */}
+        {/* ------------------ بخش پروفایل ------------------ */}
         {activeSection === "profile" && (
-          <div className="profile-card">
+          <div className="Student-profile-card">
+
             <h2 className="card-title">پروفایل دانش‌آموز</h2>
 
             {!isProfileComplete ? (
@@ -105,6 +117,7 @@ function StudentDashboard() {
                   <label htmlFor="fileInput" className="photo-btn">
                     انتخاب تصویر
                   </label>
+
                   <input
                     type="file"
                     id="fileInput"
@@ -114,7 +127,9 @@ function StudentDashboard() {
                   />
                 </div>
 
+                {/* فرم */}
                 <form className="Teacher-profile-form" onSubmit={handleSave}>
+
                   <div className="form-row">
                     <label>کد ملی</label>
                     <input value={profileData.nationalId} disabled />
@@ -147,12 +162,7 @@ function StudentDashboard() {
 
                   <div className="form-row">
                     <label>نام پدر</label>
-                    <input
-                      name="fatherName"
-                      value={profileData.fatherName}
-                      onChange={handleChange}
-                      placeholder="مثلاً علیرضا"
-                    />
+                    <input name="fatherName" value={profileData.fatherName} onChange={handleChange} />
                   </div>
 
                   <div className="form-row">
@@ -179,13 +189,17 @@ function StudentDashboard() {
                     ذخیره و نمایش نمایه
                   </button>
                 </form>
+
               </>
             ) : (
               <div className="student-profile-card">
+
                 <div className="student-profile-avatar">
                   <img src={studentData.photo} alt="دانش‌آموز" />
                 </div>
+
                 <h3>اطلاعات دانش‌آموز</h3>
+
                 <div className="student-profile-info">
                   <p><strong>نام:</strong> {studentData.firstName} {studentData.lastName}</p>
                   <p><strong>نام پدر:</strong> {studentData.fatherName}</p>
@@ -193,29 +207,65 @@ function StudentDashboard() {
                   <p><strong>رشته ورزشی:</strong> {studentData.sport}</p>
                   <p><strong>امتیاز کلی دانش‌آموز:</strong> 193</p>
                 </div>
+                  {/* نمودار تغییرات نمرات */}
+<ScoreChart monthlyScores={[12, 14, 15, 17, 19, 18, 20, 18, 17, 19, 20, 20]} />
+
+                <button className="download-btn" onClick={() => setShowCard(true)}>
+                  👁️ نمایش کارت دانش‌آموزی
+                </button>
+
                 <button className="delete-profile-btn" onClick={handleDeleteProfile}>
                   حذف نمایه
                 </button>
+
               </div>
             )}
+
           </div>
         )}
 
-        {/* 🟦 بخش اطلاعات سلامت دانش‌آموز */}
+        {/* ------------------ اطلاعات تکمیلی ------------------ */}
         {activeSection === "extra-info" && (
           <div className="extra-info-section">
             <StudentHealthInfo />
           </div>
         )}
 
-        {/* 🟨 در آینده: صفحه ارزشیابی */}
+        {/* ------------------ صفحه ارزشیابی ------------------ */}
         {activeSection === "evaluation" && (
           <div className="evaluation-section">
             <h2>صفحه ارزشیابی دانش‌آموز</h2>
             <p>در آینده این بخش با فرم ارزیابی معلم جایگزین می‌شود.</p>
           </div>
         )}
+
       </div>
+
+      {/* ----------- مودال نمایش کارت دانش‌آموز ----------- */}
+      {showCard && (
+        <div className="card-modal">
+          
+          <div className="card-overlay" onClick={() => setShowCard(false)}></div>
+
+          <div className="card-content">
+            <StudentCard
+              name={`${studentData.firstName} ${studentData.lastName}`}
+              fatherName={studentData.fatherName}
+              grade={studentData.grade}
+              major={studentData.sport}
+              continuousScore={80}
+              finalScore={20}
+              profileImg={studentData.photo}
+            />
+            
+            <button className="close-card-btn" onClick={() => setShowCard(false)}>
+              بستن کارت
+            </button>
+          </div>
+        </div>
+      )}
+
+
     </div>
   );
 }

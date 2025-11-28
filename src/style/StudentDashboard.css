@@ -12,12 +12,15 @@
 /* =========================
    📋 PROFILE CARD (مین وسط صفحه)
 ========================= */
-.profile-card {
+.Student-profile-card {
   flex: 1;
   padding: 60px 40px;
   text-align: center;
   position: relative;
   background: transparent;
+  width: 480px;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.2);;
 }
 
 /* =========================
@@ -269,4 +272,52 @@
   display: flex;
   flex-direction: column;
   align-items: center;  /* 👈 این هم برای سازگاری */
+}
+.download-btn {
+  margin-top: 20px;
+  background-color: #db162f;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-family: "Vazirmatn", sans-serif;
+  transition: all 0.3s ease;
+}
+.download-btn:hover {
+  background-color: #383961;
+}
+.profile-actions button {
+  margin-top: 10px;
+}
+.card-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9000;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.close-card-btn {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background: crimson;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }

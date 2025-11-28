@@ -6,7 +6,7 @@ import TeacherDashboard from "../src/components/page/TeacherDashboard";
 import ParentDashboard from '../src/components/page/ParentDashboard';
 import StudentEvaluation from "./components/page/StudentEvaluation";
 import HomePage from "./components/page/HomePage";
-import Header from "./components/page/Header";
+import HealthCommittee from "./components/page/HealthCommittee";
 import StudentHealthInfo from "../src/components/page/StudentHealthInfo";
 function App() {
   
@@ -27,7 +27,7 @@ function App() {
             element={<StudentEvaluation />}
           />
           <Route path="/home" element={<HomePage />} />
-
+          <Route path="/health-committee" element={<HealthCommittee />} />
 
         </Routes>
       </BrowserRouter>
