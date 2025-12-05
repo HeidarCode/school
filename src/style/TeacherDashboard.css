@@ -244,6 +244,8 @@ input[type="file"] {
 
 .students-list-section {
   background: rgba(255, 255, 255, 0.25);
+  width: 75%;
+  margin-left: 17vw;
   border-radius: 18px;
   padding: 25px;
   backdrop-filter: blur(10px);
@@ -340,3 +342,9 @@ input[type="file"] {
   .reset-btn:hover {
     background-color: #b01025;
   }
+.teacher-dashboard input,
+.teacher-dashboard textarea,
+.teacher-dashboard select {
+  direction: rtl;
+  text-align: right;
+}

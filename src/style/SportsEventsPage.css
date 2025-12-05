@@ -1,0 +1,585 @@
+:root {
+  --color-wine: #3b1f2b;
+  --color-red: #db162f;
+  --color-ivory: #dbdfac;
+  --color-slate: #5f758e;
+  --color-ink: #383961;
+  --color-dark-bg: #0b132b;
+}
+
+/* پس‌زمینه کلی صفحه */
+.sports-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #dbdfac 0, #f7f7f0 35%, #f3f3ff 100%);
+  color: var(--color-wine);
+  font-family: "Vazirmatn", sans-serif;
+  overflow-x: hidden;
+}
+
+/* هدر با انیمیشن */
+.sports-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 8% 90px;
+  background: radial-gradient(circle at 10% 20%, rgba(219, 22, 47, 0.2), transparent 55%),
+              radial-gradient(circle at 90% 0%, rgba(56, 57, 97, 0.3), transparent 60%),
+              linear-gradient(135deg, #f8f9ff 0%, #ffe9f0 40%, #fff7e6 100%);
+}
+
+.sports-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.2) 0,
+      rgba(255, 255, 255, 0.2) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+  mix-blend-mode: soft-light;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.sports-hero::before,
+.sports-hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(35px);
+  opacity: 0.65;
+  transform-origin: center;
+  animation: hero-orbit 16s linear infinite;
+}
+
+.sports-hero::before {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(219, 22, 47, 0.45), transparent 70%);
+  top: -120px;
+  left: -80px;
+}
+
+.sports-hero::after {
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(56, 57, 97, 0.55), transparent 70%);
+  bottom: -140px;
+  right: -60px;
+  animation-duration: 20s;
+}
+
+@keyframes hero-orbit {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(10px, -12px, 0) rotate(180deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(360deg);
+  }
+}
+
+.sports-hero-content {
+  position: relative;
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+  color: var(--color-ink);
+}
+
+.sports-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  border-radius: 999px;
+  background: rgba(11, 19, 43, 0.06);
+  color: var(--color-red);
+  border: 1px solid rgba(219, 22, 47, 0.35);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
+  margin-bottom: 14px;
+}
+
+.sports-hero-tag::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--color-red);
+  box-shadow: 0 0 15px rgba(219, 22, 47, 0.8);
+}
+
+/* عنوان اصلی با انیمیشن */
+.sports-hero-title {
+  font-size: clamp(2.4rem, 3vw + 1.4rem, 3.3rem);
+  line-height: 1.25;
+  margin: 0 0 10px;
+  color: var(--color-wine);
+  text-shadow: 0 10px 35px rgba(11, 19, 43, 0.18);
+  animation: title-pop 0.9s ease-out both;
+}
+
+.sports-hero-title span {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--color-red), #ff7c7c);
+  color: #fff;
+  font-size: 0.85em;
+  box-shadow: 0 12px 25px rgba(219, 22, 47, 0.4);
+}
+
+@keyframes title-pop {
+  0% {
+    transform: translateY(14px) scale(0.96);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-3px) scale(1.02);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.sports-hero-subtitle {
+  margin: 0;
+  margin-top: 6px;
+  font-size: 0.98rem;
+  color: rgba(56, 57, 97, 0.9);
+}
+
+/* محتوا */
+.sports-content {
+  padding: 32px 8% 60px;
+}
+
+.sports-section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: var(--color-wine);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.section-title::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-red);
+  box-shadow: 0 0 15px rgba(219, 22, 47, 0.7);
+}
+
+.section-title-football::after {
+  content: "⚽";
+  font-size: 1rem;
+}
+
+.section-title-semi::after {
+  content: "🏆";
+  font-size: 1rem;
+}
+
+.section-title-notes::after {
+  content: "📌";
+  font-size: 1rem;
+}
+
+.section-caption {
+  font-size: 0.9rem;
+  color: rgba(56, 57, 97, 0.9);
+  margin-bottom: 16px;
+}
+
+/* کارت جدول با افکت گلس و نور */
+.table-card {
+  position: relative;
+  border-radius: 18px;
+  padding: 14px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(247, 249, 255, 0.95));
+  box-shadow: 0 14px 45px rgba(11, 19, 43, 0.16);
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+
+.table-card-football {
+  border: 1px solid rgba(219, 22, 47, 0.25);
+}
+
+.table-glow {
+  position: absolute;
+  inset: -50%;
+  opacity: 0.4;
+  pointer-events: none;
+  background: radial-gradient(circle at 0 0, rgba(219, 22, 47, 0.12), transparent 60%),
+              radial-gradient(circle at 100% 0, rgba(95, 117, 142, 0.14), transparent 65%),
+              radial-gradient(circle at 50% 100%, rgba(56, 57, 97, 0.12), transparent 60%);
+}
+
+/* جدول */
+.sports-table {
+  width: 100%;
+  border-collapse: collapse;
+  position: relative;
+  z-index: 1;
+  direction: rtl;
+}
+
+.sports-table thead {
+  background: linear-gradient(135deg, var(--color-red), #ff7c7c);
+  color: #fff;
+}
+
+.sports-table th,
+.sports-table td {
+  padding: 10px 12px;
+  font-size: 0.88rem;
+  text-align: right;
+}
+
+.sports-table th {
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.sports-table tbody tr {
+  background: rgba(255, 255, 255, 0.86);
+  transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  border-bottom: 1px solid rgba(11, 19, 43, 0.04);
+  animation: row-fade-in 0.45s ease-out both;
+}
+
+.sports-table tbody tr:hover {
+  background: #fffdf6;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(11, 19, 43, 0.08);
+}
+
+.sports-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ردیف‌های صعود و حذف */
+.row-qualified {
+  border-right: 3px solid rgba(46, 190, 138, 0.8);
+}
+
+.row-eliminated {
+  border-right: 3px solid rgba(219, 22, 47, 0.6);
+}
+
+.status-cell {
+  text-align: center;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.status-qualified {
+  background: rgba(46, 190, 138, 0.1);
+  color: #139b63;
+  border: 1px solid rgba(46, 190, 138, 0.6);
+}
+
+.status-eliminated {
+  background: rgba(219, 22, 47, 0.06);
+  color: #b11226;
+  border: 1px solid rgba(219, 22, 47, 0.6);
+}
+
+@keyframes row-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* کارت‌های نیمه نهایی */
+.semifinal-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.semifinal-card {
+  position: relative;
+  padding: 16px 14px;
+  border-radius: 16px;
+  background: radial-gradient(circle at 0 0, rgba(219, 22, 47, 0.08), transparent 60%),
+              radial-gradient(circle at 100% 100%, rgba(56, 57, 97, 0.08), transparent 60%),
+              linear-gradient(135deg, #ffffff, #f7f8ff);
+  box-shadow: 0 12px 30px rgba(11, 19, 43, 0.16);
+  border: 1px solid rgba(219, 22, 47, 0.25);
+  overflow: hidden;
+  animation: card-pop-in 0.6s ease-out both;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.semifinal-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), transparent);
+  mix-blend-mode: soft-light;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.semifinal-card:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 18px 45px rgba(11, 19, 43, 0.22);
+}
+
+.semifinal-card:hover::after {
+  opacity: 1;
+}
+
+@keyframes card-pop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.semifinal-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 10px;
+  font-size: 0.78rem;
+  border-radius: 999px;
+  background: rgba(219, 22, 47, 0.12);
+  color: #b11226;
+  border: 1px solid rgba(219, 22, 47, 0.55);
+  margin-bottom: 6px;
+}
+
+.semifinal-match {
+  font-size: 1rem;
+  margin: 0 0 10px;
+  color: var(--color-wine);
+}
+
+.semifinal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.88rem;
+  color: rgba(56, 57, 97, 0.95);
+}
+
+.semifinal-info i {
+  margin-left: 6px;
+  color: var(--color-red);
+}
+
+/* کارت‌های نکات پایانی */
+.notes-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.note-card {
+  border-radius: 16px;
+  padding: 14px 12px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(11, 19, 43, 0.08);
+}
+
+.note-card-primary {
+  background: radial-gradient(circle at 0 0, rgba(219, 22, 47, 0.12), transparent 60%),
+              #ffffff;
+  border-color: rgba(219, 22, 47, 0.3);
+}
+
+.note-card-accent {
+  background: radial-gradient(circle at 0 0, rgba(95, 117, 142, 0.16), transparent 60%),
+              #ffffff;
+  border-color: rgba(95, 117, 142, 0.4);
+}
+
+.note-card-outline {
+  background: #ffffff;
+  border-style: dashed;
+  border-color: rgba(56, 57, 97, 0.4);
+}
+
+/* ریسپانسیو */
+@media (max-width: 900px) {
+  .sports-hero {
+    padding: 60px 6% 70px;
+  }
+
+  .sports-content {
+    padding: 26px 6% 40px;
+  }
+
+  .sports-table th,
+  .sports-table td {
+    font-size: 0.8rem;
+  }
+
+  .semifinal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .sports-table thead {
+    display: none;
+  }
+
+  .sports-table,
+  .sports-table tbody,
+  .sports-table tr,
+  .sports-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .sports-table tr {
+    margin-bottom: 10px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .sports-table td {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    position: relative;
+  }
+
+  .sports-table td::before {
+    content: attr(data-label) " : ";
+    font-weight: 600;
+    color: rgba(56, 57, 97, 0.85);
+    margin-left: 4px;
+  }
+
+  .status-cell {
+    text-align: right;
+  }
+}
+/* تنیس روی میز — تم بنفش / صورتی */
+.section-title-tennis::after {
+  content: "🎾";
+  font-size: 1.1rem;
+}
+
+.table-card-tennis {
+  border: 1px solid rgba(56, 57, 97, 0.35);
+}
+
+.table-glow-tennis {
+  background: radial-gradient(circle at 0 0, rgba(56, 57, 97, 0.12), transparent 60%),
+              radial-gradient(circle at 100% 0, rgba(181, 99, 255, 0.18), transparent 60%),
+              radial-gradient(circle at 50% 100%, rgba(130, 80, 190, 0.14), transparent 60%);
+}
+
+/* عنوان نیمه‌نهایی */
+.section-title-semi-tennis::after {
+  content: "🏓";
+  font-size: 1.1rem;
+}
+
+.section-title-tennis-notes::after {
+  content: "📘";
+}
+
+/* رنگ‌های کارت‌ها */
+.semifinal-card.tennis {
+  border-color: rgba(120, 60, 200, 0.35);
+  background: linear-gradient(135deg, #ffffff, #f4ecff);
+}
+/* ----------------------- */
+/* طناب‌کشی – تم نارنجی   */
+/* ----------------------- */
+
+.section-title-rope::after {
+  content: "🧵";
+  font-size: 1.1rem;
+}
+
+.section-title-rope-final::after {
+  content: "🏆";
+  font-size: 1.1rem;
+}
+
+.section-title-rope-notes::after {
+  content: "📘";
+}
+
+/* رنگ کارت جدول */
+.table-card-rope {
+  border: 1px solid rgba(255, 140, 0, 0.45);
+}
+
+.table-glow-rope {
+  background: radial-gradient(circle at 0 0, rgba(255, 208, 138, 0.18), transparent 60%),
+              radial-gradient(circle at 100% 0, rgba(255, 150, 50, 0.2), transparent 60%),
+              radial-gradient(circle at 50% 100%, rgba(255, 180, 50, 0.25), transparent 60%);
+}
+
+/* برنده */
+.rope-winner {
+  background: #ff8c00;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* در حال برگزاری */
+.rope-pending {
+  background: #f3b65d;
+  color: #5a3600;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* کارت مرحله نهایی */
+.semifinal-card-rope {
+  border: 1px solid rgba(255, 140, 0, 0.45);
+  background: linear-gradient(135deg, #fff6e6, #ffe5c2);
+}

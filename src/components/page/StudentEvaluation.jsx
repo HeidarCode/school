@@ -1,5 +1,7 @@
 import React , {useState,useEffect} from "react";
 import "./../../style/StudentEvaluation.css";
+import Footer from "./Footer";
+import Header from "./Header";
 
 const StudentEvaluation = () => {
   const [score, setScore] = useState("");
@@ -324,6 +326,8 @@ const generateFeedback = (score) => {
      return "";
    };//
   return (
+    <div>
+      <Header />
      <div className="student-evaluation-page">
       {/* 🟢 بخش اطلاعات دانش‌آموز */}
       {student && (
@@ -927,10 +931,14 @@ const generateFeedback = (score) => {
 </section>
 
     </section> 
+    <div className="SubEv">
+      <button >ثبت نهایی ارزشیابی</button>
     </div>
-
-    
+    </div>
+<Footer />
+  </div>  
   );
+
 };
 
 export default StudentEvaluation;

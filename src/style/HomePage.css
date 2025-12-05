@@ -23,7 +23,7 @@ body {
   /* ✅ Scrollbar سمت چپ */
   direction: ltr;
 
-  color: var(--color-light);
+
   /* background-color: var(--color-primary); */
 }
 
@@ -132,7 +132,7 @@ body {
   background: var(--color-accent);
 }
 .yellow {
-  background: var(--color-light);
+  background:brown;
   color: var(--color-dark);
 }
 .blue {
@@ -159,6 +159,9 @@ body {
 .fun-card:hover {
   background: rgba(255, 255, 255, 0.15);
   transform: scale(1.05);
+}
+.yellow h3 , p {
+  color: white;
 }
 
 /* 🦶 فوتر */

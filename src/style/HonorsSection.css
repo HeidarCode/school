@@ -1,0 +1,106 @@
+:root {
+  --wine: #3B1F2B;
+  --red: #DB162F;
+  --ivory: #DBDFAC;
+  --slate: #5F758E;
+  --ink: #383961;
+}
+
+.honors-section {
+  width: 100%;
+  padding: 80px 6%;
+  background-color: var(--ivory);
+  direction: rtl;
+  text-align: center;
+  font-family: inherit;
+}
+
+.honors-title {
+  font-size: 2.4rem;
+  color: var(--wine);
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+}
+
+.honors-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 110px;
+  height: 3px;
+  background-color: var(--red);
+  border-radius: 10px;
+}
+
+.honors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+  margin-top: 30px;
+}
+
+.honor-card {
+  background: #fff;
+  border: 2px solid var(--wine);
+  border-radius: 16px;
+  padding: 22px;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+ 
+.honor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+.honor-img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 15px;
+ 
+}
+
+.honor-tag {
+  display: inline-block;
+  background-color: var(--red);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 14px;
+  margin-bottom: 15px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.honor-card-title {
+  color: var(--wine);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.honor-card-desc {
+  color: #444;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  padding: 0 10px;
+}
+.honor-img {
+  width: 100%;
+  height: auto;
+  max-height: 260px; /* اختیاری: اگر عکس خیلی بلند بود کنترلش می‌کند */
+  object-fit: contain;
+  margin-bottom: 15px;
+     border-radius: 15px;
+
+}
+.honors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* دقیقا 3 کارت در هر ردیف */
+  margin-right: 10vw;
+  gap: 35px;
+  justify-content: center; /* وسط‌چین کردن کل گرید */
+}

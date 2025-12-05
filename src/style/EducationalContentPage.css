@@ -1,0 +1,210 @@
+/* صفحه اصلی */
+.edu-page {
+  direction: rtl;
+  padding: 30px;
+  min-height: 100vh;
+ 
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+/* -------------------- هدر -------------------- */
+.edu-header h1 {
+  font-size: 2rem;
+  margin-bottom: 4px;
+  font-weight: 800;
+  text-align: center;
+  color: #555;
+}
+
+.edu-header p {
+  color: #555;
+  text-align: center;
+}
+
+/* -------------------- ویدئو -------------------- */
+.edu-video-container {
+  background: white;
+  padding: 20px;
+  border-radius: 22px;
+  box-shadow: 0 10px 25px #0001;
+  border: 1px solid #ddd;
+}
+
+.video-badge {
+  background: #4c6ef5;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.edu-video-poster {
+  background: url("https://images.unsplash.com/photo-1581091012184-5c7f1f5d2f4c") center/cover;
+  height: 230px;
+  border-radius: 18px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  color: white;
+}
+
+.Eplay-btn {
+  width: 78px;
+  height: 78px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: none;
+  background: #ffffffcc;
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.video-info h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* -------------------- تصاویر -------------------- */
+.edu-images-section .section-title {
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+}
+
+.edu-images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.edu-image-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  text-align: center;
+  border: 1px solid #ddd;
+  box-shadow: 0 8px 20px #0001;
+}
+
+.edu-image-card .image {
+  height: 140px;
+  background: linear-gradient(135deg, #cce1ff, #d7e3ff);
+  border-radius: 16px;
+  margin-bottom: 12px;
+}
+.edu-image-card h3 {
+    color: #3B1F2B;
+}
+/* -------------------- PDF کارت‌ها -------------------- */
+.edu-pdf-section .section-title {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+
+.pdf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.pdf-card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid #d8d8d8;
+  box-shadow: 0 10px 25px #0001;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pdf-icon {
+  background: #4c6ef5;
+  color: white;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.pdf-btn {
+  padding: 8px 0;
+  text-align: center;
+  background: linear-gradient(90deg, #4c6ef5, #6b8cff);
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  margin-top: auto;
+  transition: 0.2s;
+}
+
+.pdf-btn:hover {
+  background: linear-gradient(90deg, #3e5ae8, #6184ff);
+}
+/* ویدئو واقعی */
+.real-video {
+  padding: 0 !important;
+}
+
+.edu-real-video {
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  border: 2px solid rgba(59, 31, 43, 0.15);
+}
+
+/* کانتینر ویدئو با افکت گلس */
+.edu-video-container {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(14px);
+  padding: 22px;
+  border-radius: 24px;
+  border: 1px solid rgba(59, 31, 43, 0.25);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.video-info {
+  margin-top: 12px;
+  color: #3B1F2B;
+}
+
+.video-badge {
+  background: #3B1F2B;
+  color: #DBDFAC;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  display: inline-block;
+  margin-bottom: 14px;
+  font-weight: bold;
+}
+.edu-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 12px;
+}
+
+.pdf-icon h3 {
+    color: #00000000;
+}

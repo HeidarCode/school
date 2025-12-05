@@ -2,14 +2,19 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../../style/HomePage.css";
 import Header from "./Header";
-import photo from "../../style/مدرسه-ایرانی-در-خارج-از-کشور-7.jpg";
-import photo1 from "../../style/رنگ-لباس-فرم-راهنمایی-پسرانه-1.jpg";
+import Slider from "./Slider";
+import photo1 from "../../style/image/1.jpg"
+import photo2 from "../../style/image/2.jpg"
+import photo3 from "../../style/image/3.jpg"
+import photo4 from "../../style/image/4.jpg"
+import Footer from "./Footer";
 
 const HomePage = () => {
   return (
     <div className="homepage" dir="rtl">
       <Header />
-      <Slider />
+         <Slider images={sliderImages} />   {/* 👈 اسلایدر اینجاست */}
+
       <MainSections />
       <FunActivities />
       <Footer />
@@ -17,25 +22,10 @@ const HomePage = () => {
   );
 };
 
-// ---------------------- اسلایدر ----------------------
-const Slider = () => {
-  return (
-    <div className="slider">
-      <div className="slider-inner">
-        <img src={photo} alt="group study" />
-        <img src={photo1} alt="teacher class" />
-        <img
-          src="https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg"
-          alt="students teamwork"
-        />
-        <img
-          src="https://images.pexels.com/photos/3184432/pexels-photo-3184432.jpeg"
-          alt="library reading"
-        />
-      </div>
-    </div>
-  );
-};
+ const sliderImages = [
+   photo1 , photo2 , photo3 , photo4 
+  ];
+
 
 // ---------------------- بخش کارت‌ها ----------------------
 const MainSections = () => {
@@ -87,7 +77,9 @@ const FunActivities = () => {
   };
 
   return (
+   
     <section className="fun-section fun-redesign">
+      
       <div className="fun-header">
         <h2>فعالیت‌های سرگرم‌کننده آنلاین</h2>
         <p className="fun-sub">
@@ -120,67 +112,8 @@ const FunActivities = () => {
 };
 
 
-const Footer = () => (
-  <footer className="footer">
-    <div className="footer-content">
-      <div className="footer-box">
-        <h3>مدرسه زنده‌یاد زنجانی</h3>
-        <p>محل یادگیری، تلاش و افتخار</p>
-      </div>
+  
 
-      <div className="footer-box">
-        <h4>تماس با ما</h4>
-        <p>📍 زنجان، میدان انقلاب</p>
-        <p>📞 ۰۲۴-۳۳۴۴۵۶۷۸</p>
-      </div>
-
-      <div className="footer-box">
-        <h4>ارسال پیام</h4>
-        <input type="email" placeholder="ایمیل شما" />
-        <button>ارسال</button>
-      </div>
-    </div>
-
-    <div className="social-links">
-      <a
-        href="https://www.instagram.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram"
-      >
-        <i className="fab fa-instagram"></i>
-      </a>
-      <a
-        href="https://t.me"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Telegram"
-      >
-        <i className="fab fa-telegram"></i>
-      </a>
-      <a
-        href="https://www.youtube.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="YouTube"
-      >
-        <i className="fab fa-youtube"></i>
-      </a>
-      <a
-        href="https://www.linkedin.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn"
-      >
-        <i className="fab fa-linkedin"></i>
-      </a>
-    </div>
-
-    <p className="copy">
-      ©  طراحی توسط Soft Labs
-    </p>
-  </footer>
-);
 
 
 

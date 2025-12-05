@@ -8,6 +8,9 @@ import StudentEvaluation from "./components/page/StudentEvaluation";
 import HomePage from "./components/page/HomePage";
 import HealthCommittee from "./components/page/HealthCommittee";
 import StudentHealthInfo from "../src/components/page/StudentHealthInfo";
+import  HonorsSection from "../src/components/page/HonorsSection";
+import SportsEventsPage from "./components/page/SportsEventsPage";
+import EducationalContentPage from "./components/page/EducationalContentPage";
 function App() {
   
   return (
@@ -17,7 +20,7 @@ function App() {
       <BrowserRouter>
         <Routes>
       
-          <Route path="/" element={<AuthPage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/student-dashboard" element={<StudentDashboard />} />
           <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
           <Route path="/parent-dashboard" element={<ParentDashboard />} />
@@ -26,9 +29,11 @@ function App() {
             path="/teacher-dashboard/student-evaluation"
             element={<StudentEvaluation />}
           />
-          <Route path="/home" element={<HomePage />} />
+          <Route path="/home" element={<AuthPage />} />
           <Route path="/health-committee" element={<HealthCommittee />} />
-
+           <Route path= "/achievements" element={<HonorsSection />} />
+           <Route path="/sports-events" element={<SportsEventsPage />} />
+           <Route path="/educational-content" element={<EducationalContentPage />} />
         </Routes>
       </BrowserRouter>
     </div>

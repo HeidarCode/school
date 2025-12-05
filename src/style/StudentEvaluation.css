@@ -206,3 +206,14 @@ html, body, #root {
 .student-details-row p {
   margin: 0;
 }
+.SubEv {
+  text-align: center;
+  margin-top: 3vw;
+}
+.SubEv button {
+  color: #DBDFAC;
+  background-color: #383961;
+  border-radius: 5px;
+  border: 2px solid #DBDFAC;
+  font-size: 30px;
+}

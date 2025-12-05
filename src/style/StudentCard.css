@@ -1,6 +1,7 @@
 .student-card {
-  width: 350px;
-  background: #777;
+  width: 400px;
+  /* background: #777; */
+  background-color: #dbdfac;
   padding: 20px;
   border-radius: 16px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -22,6 +23,7 @@
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 10px;
+  box-shadow: #0056b3;
 }
 
 .card-subtitle {
@@ -37,12 +39,17 @@
 
 .student-card-body p {
   margin: 6px 0;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #383961;
+  border-bottom: 3px solid #383961;
 }
 
 .student-card-footer {
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
+  border-radius: 20px;
 }
 
 .footer-logo {
@@ -52,12 +59,13 @@
 /* StudentCard.css */
 .student-card-wrapper {
   text-align: center;
+    border-radius: 20px;
 }
 
 .student-card {
   width: 350px;
   padding: 15px;
-  background: #777;
+  /* background: #777; */
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
@@ -67,6 +75,7 @@
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
+    border-radius: 20px;
 }
 
 .card-text p {
@@ -86,4 +95,50 @@
 
 .download-btn:hover {
   background: #0056b3;
+}
+.footer-logo {
+  border-radius: 10px;
+}
+
+/* ----- PRINT MODE ----- */
+@media print {
+
+  /* فقط کارت چاپ شود — باقی صفحه مخفی */
+  body * {
+    visibility: hidden !important;
+  }
+
+  /* کارت مودال چاپ شود */
+  .student-card, .student-card * {
+    visibility: visible !important;
+  }
+
+  /* کارت در وسط صفحه چاپ شود */
+  .student-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  /* خود مودال حذف شود تا خط و سایه چاپ نشود */
+  .card-modal,
+  .card-overlay {
+    position: static !important;
+    background: white !important;
+    box-shadow: none !important;
+  }
+
+  /* دکمه‌ها در چاپ مخفی شوند */
+  .print-btn {
+    display: none !important;
+  }
+}
+.print-btn {
+  background-color:#0056b3 ;
+  border-radius: 5px;
+  color: #ffff;
+  border: none;
+  width: 30%;
 }

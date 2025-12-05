@@ -80,21 +80,21 @@ function TeacherDashboard() {
 
   // داده‌های نمونه دانش‌آموزان
   const students = [
-    { name: "امیر", lastName: "رحیمی", grade: "هفتم", subject: "ریاضی" },
-    { name: "محمد", lastName: "جعفری", grade: "هفتم", subject: "علوم" },
-    { name: "علی", lastName: "کریمی", grade: "هشتم", subject: "ورزش" },
-    { name: "رضا", lastName: "حسینی", grade: "نهم", subject: "فارسی" },
-    { name: "سینا", lastName: "عباسی", grade: "نهم", subject: "ریاضی" },
-    { name: "پارسا", lastName: "ملکی", grade: "هشتم", subject: "زبان انگلیسی" },
-    { name: "امیرحسین", lastName: "زارعی", grade: "هفتم", subject: "دینی" },
-    { name: "عرفان", lastName: "موسوی", grade: "هشتم", subject: "تاریخ" },
-    { name: "یونس", lastName: "احمدی", grade: "نهم", subject: "اجتماعی" },
-    { name: "محمدرضا", lastName: "بیاتی", grade: "هشتم", subject: "ورزش" },
-    { name: "مهدی", lastName: "نصیری", grade: "هفتم", subject: "ریاضی" },
-    { name: "علی", lastName: "کاظمی", grade: "نهم", subject: "علوم" },
-    { name: "طاها", lastName: "جلالی", grade: "نهم", subject: "زبان انگلیسی" },
-    { name: "پیمان", lastName: "محمدی", grade: "هشتم", subject: "اجتماعی" },
-    { name: "رضوان", lastName: "کریمیان", grade: "هفتم", subject: "هنر" },
+    { name: "امیر", lastName: "رحیمی", grade: "اول", subject: "ریاضی" },
+    { name: "محمد", lastName: "جعفری", grade:"سوم", subject: "علوم" },
+    { name: "علی", lastName: "کریمی", grade: "پنجم", subject: "ورزش" },
+    { name: "رضا", lastName: "حسینی", grade: "ششم", subject: "فارسی" },
+    { name: "سینا", lastName: "عباسی", grade: "دوم", subject: "ریاضی" },
+    { name: "پارسا", lastName: "ملکی", grade: "سوم", subject: "زبان انگلیسی" },
+    { name: "امیرحسین", lastName: "زارعی", grade:"چهارم", subject: "دینی" },
+    { name: "عرفان", lastName: "موسوی", grade: "پنجم", subject: "تاریخ" },
+    { name: "یونس", lastName: "احمدی", grade:"اول", subject: "اجتماعی" },
+    { name: "محمدرضا", lastName: "بیاتی", grade:"سوم", subject: "ورزش" },
+    { name: "مهدی", lastName: "نصیری", grade: "اول", subject: "ریاضی" },
+    { name: "علی", lastName: "کاظمی", grade: "دوم", subject: "علوم" },
+    { name: "طاها", lastName: "جلالی", grade: "دوم", subject: "زبان انگلیسی" },
+    { name: "پیمان", lastName: "محمدی", grade: "سوم", subject: "اجتماعی" },
+    { name: "رضوان", lastName: "کریمیان", grade: "ششم", subject: "هنر" },
   ];
 
   // کلیک روی دانش‌آموز

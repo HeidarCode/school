@@ -3,6 +3,7 @@ import "../../style/StudentCard.css";
 import logo1 from "../../style/photo22304757183.jpg";
 import logo2 from "../../style/photo22304922864.jpg";
 import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 
 function StudentCard({
   name,
@@ -52,6 +53,26 @@ function StudentCard({
     pdf.save("student-card.pdf");
   };
 
+
+const downloadAsJPG = () => {
+  const card = document.querySelector(".student-card");
+
+  if (!card) return;
+
+  html2canvas(card, {
+    scale: 3,         // کیفیت بالا
+    useCORS: true,    // برای لوگوهای import شده
+    logging: false
+  }).then(canvas => {
+    const dataURL = canvas.toDataURL("image/jpeg", 0.95);
+
+    const link = document.createElement("a");
+    link.href = dataURL;
+    link.download = "student-card.jpg";
+    link.click();
+  });
+};
+
   // ---------------- UI ----------------
   return (
     <div className="student-card">
@@ -79,7 +100,10 @@ function StudentCard({
         <img src={logo2} alt="logo2" className="footer-logo" />
       </div>
 
-      {/* دکمه دانلود PDF */}
+<button onClick={downloadAsJPG} className="print-btn">
+  دانلود کارت (JPG)
+</button>
+
      
 
     </div>
