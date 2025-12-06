@@ -37,8 +37,8 @@ export default function Header() {
         {/* منوی اصلی */}
         <nav className={`nav-links ${open ? 'open' : ''}`}>
           <button
-            className={`nav-item ${location.pathname === '/home' ? 'active' : ''}`}
-            onClick={() => go('/home')}
+            className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}
+            onClick={() => go('/')}
           >
             <FiHome />
             <span>صفحه اصلی</span>
@@ -54,7 +54,7 @@ export default function Header() {
 
           <button
             className={`nav-item main ${location.pathname === '/' ? 'active' : ''}`}
-            onClick={() => go('/')}
+            onClick={() => go('/home')}
           >
             <BiLogIn />
             <span>ورود / ثبت‌نام</span>

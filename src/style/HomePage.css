@@ -133,7 +133,7 @@ body {
 }
 .yellow {
   background:brown;
-  color: var(--color-dark);
+  
 }
 .blue {
   background: var(--color-blue);
@@ -160,9 +160,9 @@ body {
   background: rgba(255, 255, 255, 0.15);
   transform: scale(1.05);
 }
-.yellow h3 , p {
+/* .yellow h3 , p {
   color: white;
-}
+} */
 
 /* 🦶 فوتر */
 .footer {
